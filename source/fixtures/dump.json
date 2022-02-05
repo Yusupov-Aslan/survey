@@ -1,0 +1,68 @@
+[
+{
+    "model": "survey.poll",
+    "pk": 1,
+    "fields": {
+        "question": "Если бы у вас была возможность больше никогда не работать, вы бы ею воспользовались?",
+        "created_at": "2022-02-05T05:48:19.669Z"
+    }
+},
+{
+    "model": "survey.poll",
+    "pk": 2,
+    "fields": {
+        "question": "Каким человеком вы восхищаетесь?",
+        "created_at": "2022-02-05T06:17:24.804Z"
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 1,
+    "fields": {
+        "option_text": "Да!",
+        "poll": 1
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 2,
+    "fields": {
+        "option_text": "Нет!",
+        "poll": 1
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 3,
+    "fields": {
+        "option_text": "Цицерон",
+        "poll": 2
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 4,
+    "fields": {
+        "option_text": "Илон Маск",
+        "poll": 2
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$niY85mtOm6EPDbm4louQlf$3rART4KQMkvIquFblggaVcHUUZ3VMTj1pXe9M9aS2Ts=",
+        "last_login": "2022-02-05T05:47:39.214Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-02-05T05:47:12.576Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
