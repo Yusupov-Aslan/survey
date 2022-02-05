@@ -6,7 +6,7 @@ from django.db import models
 
 class Poll(models.Model):
     question = models.TextField(max_length=2000, null=True, blank=True,
-                                verbose_name="Вопрос")
+                                verbose_name="Опрос")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
 
     def __str__(self):
@@ -14,8 +14,8 @@ class Poll(models.Model):
 
     class Meta:
         db_table = 'polls'
-        verbose_name = 'Вопрос'
-        verbose_name_plural = 'Вопросы'
+        verbose_name = 'Опрос'
+        verbose_name_plural = 'Опросы'
 
 
 class Choice(models.Model):

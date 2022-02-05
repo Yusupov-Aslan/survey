@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Удаление вопроса{% endblock %}
+{% block nav %} {% endblock %}
+{% block content %}
+        <div>
+        <form action="{% url 'delete_poll_view' poll.pk %}" method="POST">
+        {% csrf_token %}
+            <div class="card text-center" style="max-width: 25rem;">
+              <div class="card-header">
+                  </div>
+              <div class="card-body">
+                <h5 class="card-title">Удаление вопроса!</h5>
+                <p class="card-text">Вы действительно хотите удалить опрос!!! <br> {{ poll.question }}</p>
+                <div class="gap-2 col-6" style="float: right">
+                    <a><button class="btn btn-danger" type="submit">Да</button></a>
+                    <a href="{% url 'detail_view' poll.pk %}"><button class="btn btn-primary" type="button">Нет</button></a>
+                </div>
+              </div>
+              <div class="card-footer">
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

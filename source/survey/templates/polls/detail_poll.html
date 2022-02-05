@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{{ poll.pk }}{% endblock %}
+{% block nav %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'add_poll_view' %}">Новая опрос</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'update_poll_view' poll.pk%}">Редактировать</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link active" aria-current="page" href="{% url 'delete_poll_view' poll.pk%}">Удалить</a>
+    </li>
+{% endblock %}
+{% block content %}
+        <br>
+    <div class="card border-info mb-3" style="max-width: 25rem;">
+        <div class="card-body ">
+            <h5 class="card-title">Опрос: {{ poll.question }}</h5>
+            <p class="card-text">Время создания: {{ poll.created_at }}</p>
+        </div>
+      <div class="card-footer bg-transparent border-info">
+          <a href="{% url "polls_view" %}" class="btn btn" style="float: right">Назад</a></div>
+    </div>
+
+{% endblock %}

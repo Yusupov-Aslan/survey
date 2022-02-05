@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterModelOptions(
             name='poll',
-            options={'verbose_name': 'Вопрос', 'verbose_name_plural': 'Вопросы'},
+            options={'verbose_name': 'Опрос', 'verbose_name_plural': 'Опросы'},
         ),
         migrations.AlterModelTable(
             name='choice',

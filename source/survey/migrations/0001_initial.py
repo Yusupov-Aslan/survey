@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             name='Poll',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('question', models.TextField(blank=True, max_length=2000, null=True, verbose_name='Вопрос')),
+                ('question', models.TextField(blank=True, max_length=2000, null=True, verbose_name='Опрос')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Время создания')),
             ],
         ),
