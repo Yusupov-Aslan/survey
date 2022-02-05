@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block nav %}{% endblock %}
+{% block title %}Список вопросов{% endblock %}
+
+{% block content %}
+
+    <div class="card" style="max-width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title">Опрос: {{ poll.question }}</h5>
+        </div>
+    </div>
+    <h5>Выберите вариант!!</h5>
+    <form method="post">
+        {% for choice in poll.choices.all %}
+            <input type="radio" id="{{ choice.id }}" name="answer" value="{{ choice.id }}">
+            <label for="{{ choice.id }}">{{ choice.option_text }}</label>
+            <br>
+        {% endfor %}
+        {% include 'partial/form.html' with button_text="Ответить" %}
+    </form>
+{% endblock %}

@@ -19,6 +19,8 @@
             <p class="card-text">Время создания: {{ poll.created_at }}</p>
         </div>
         <div class="card-footer bg-transparent border-info">
+            <a href="{% url "poll_answer_view" poll.pk %}" class="btn btn" style="float: right">Ответить</a>
+
             <a href="{% url "polls_view" %}" class="btn btn" style="float: right">Назад</a></div>
     </div>
     <br>

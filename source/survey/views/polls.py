@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
+from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from survey.forms import PollForm, ChoiceForm
-from survey.models import Poll, Choice
+from survey.models import Poll, Choice, Answer
 
 
 class AddPollView(CreateView):
@@ -90,3 +91,23 @@ class ChoiceDeleteView(DeleteView):
         return reverse("detail_view", kwargs={"pk": self.object.poll.pk})
 
 
+class AnswerPollView(View):
+    def get(self, request, *args, **kwargs):
+        poll = get_object_or_404(Poll, pk=self.kwargs.get('pk'))
+        return render(request, "answers/answer.html", {"poll": poll})
+
+    def post(self, request, *args, **kwargs ):
+        choice_id = request.POST.get("answer")
+        poll_id = self.kwargs.get('pk')
+        Answer.objects.create(poll_id=poll_id, choice_id=choice_id)
+        return redirect("answers_list_view")
+
+
+class AnswersListView(ListView):
+    model = Answer
+    context_object_name = 'answers'
+    template_name = 'answers/answers_list.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.order_by('-created_at')

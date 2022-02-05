@@ -2,7 +2,7 @@ from django.urls import path
 
 from survey.views import (
     PollView, AddPollView, PollDetailView, PollUpdateView, PollDeleteView, ChoiceCreateView, ChoiceUpdateView,
-    ChoiceDeleteView
+    ChoiceDeleteView, AnswerPollView, AnswersListView
 )
 
 
@@ -15,4 +15,7 @@ urlpatterns = [
     path('poll/<int:pk>/create_choice/', ChoiceCreateView.as_view(), name='create_choice_view'),
     path('poll/<int:pk>/choice/update/', ChoiceUpdateView.as_view(), name='update_choice_view'),
     path('poll/<int:pk>/choice/delete/', ChoiceDeleteView.as_view(), name='delete_choice_view'),
+    path('poll/<int:pk>/answer/', AnswerPollView.as_view(), name='poll_answer_view'),
+    path('answers/list/', AnswersListView.as_view(), name='answers_list_view'),
+
 ]

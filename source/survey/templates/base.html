@@ -10,24 +10,30 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand" href="{% url "polls_view" %}">Главная</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-          {% block nav %}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'add_poll_view' %}">Создание опроса</a>
-        </li>
-          {% endblock %}
-      </ul>
+    <div class="container">
+        <a class="navbar-brand" href="{% url "polls_view" %}">Главная</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% block nav %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'add_poll_view' %}">Создание
+                            опроса</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'answers_list_view' %}">Просмотр
+                            всех ответов</a>
+                    </li>
+                {% endblock %}
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 <div class="container">
-    {% block content%}{% endblock %}
+    {% block content %}{% endblock %}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

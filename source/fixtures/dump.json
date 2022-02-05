@@ -3,31 +3,55 @@
     "model": "survey.poll",
     "pk": 1,
     "fields": {
-        "question": "Если бы у вас была возможность больше никогда не работать, вы бы ею воспользовались?",
-        "created_at": "2022-02-05T05:48:19.669Z"
+        "question": "Как вы представляете свой идеальный день?",
+        "created_at": "2022-02-05T10:10:41.031Z"
     }
 },
 {
     "model": "survey.poll",
     "pk": 2,
     "fields": {
+        "question": "Если бы можно было вновь начать свою жизнь с 10-летнего возраста, но при этом сохранив весь ваш опыт и знания, вы бы сделали это?",
+        "created_at": "2022-02-05T11:12:42.815Z"
+    }
+},
+{
+    "model": "survey.poll",
+    "pk": 3,
+    "fields": {
+        "question": "Какую сверхспособность вам хотелось бы иметь?",
+        "created_at": "2022-02-05T11:14:05.716Z"
+    }
+},
+{
+    "model": "survey.poll",
+    "pk": 4,
+    "fields": {
+        "question": "Если бы вам предложили вечную молодость и кучу денег с условием, что у вас никогда не будет любви и семьи, вы бы согласились?",
+        "created_at": "2022-02-05T11:15:03.235Z"
+    }
+},
+{
+    "model": "survey.poll",
+    "pk": 5,
+    "fields": {
+        "question": "Если бы вы до конца жизни должны были есть только один продукт, что бы это было?",
+        "created_at": "2022-02-05T11:15:37.553Z"
+    }
+},
+{
+    "model": "survey.poll",
+    "pk": 6,
+    "fields": {
         "question": "Каким человеком вы восхищаетесь?",
-        "created_at": "2022-02-05T06:17:24.804Z"
+        "created_at": "2022-02-05T11:16:20.785Z"
     }
 },
 {
     "model": "survey.choice",
     "pk": 1,
     "fields": {
-        "option_text": "Да!",
-        "poll": 1
-    }
-},
-{
-    "model": "survey.choice",
-    "pk": 2,
-    "fields": {
-        "option_text": "Нет!",
+        "option_text": "Лежа на дайвинге!!!",
         "poll": 1
     }
 },
@@ -35,24 +59,149 @@
     "model": "survey.choice",
     "pk": 3,
     "fields": {
-        "option_text": "Цицерон",
-        "poll": 2
+        "option_text": "Програмирование без отвлечения!",
+        "poll": 1
     }
 },
 {
     "model": "survey.choice",
     "pk": 4,
     "fields": {
-        "option_text": "Илон Маск",
+        "option_text": "Да",
         "poll": 2
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 5,
+    "fields": {
+        "option_text": "Нет",
+        "poll": 2
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 6,
+    "fields": {
+        "option_text": "Супер сила в програмирование",
+        "poll": 3
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 7,
+    "fields": {
+        "option_text": "Супер зрение",
+        "poll": 3
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 8,
+    "fields": {
+        "option_text": "Да",
+        "poll": 4
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 9,
+    "fields": {
+        "option_text": "Нет",
+        "poll": 4
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 10,
+    "fields": {
+        "option_text": "Фаст-фуд",
+        "poll": 5
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 11,
+    "fields": {
+        "option_text": "Правильное питание",
+        "poll": 5
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 12,
+    "fields": {
+        "option_text": "Цицерон",
+        "poll": 6
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 13,
+    "fields": {
+        "option_text": "Илон Маск",
+        "poll": 6
+    }
+},
+{
+    "model": "survey.choice",
+    "pk": 14,
+    "fields": {
+        "option_text": "Пророком Мухамед",
+        "poll": 6
+    }
+},
+{
+    "model": "survey.answer",
+    "pk": 1,
+    "fields": {
+        "poll": 6,
+        "created_at": "2022-02-05T12:31:27.655Z",
+        "choice": 12
+    }
+},
+{
+    "model": "survey.answer",
+    "pk": 2,
+    "fields": {
+        "poll": 6,
+        "created_at": "2022-02-05T12:31:40.841Z",
+        "choice": 13
+    }
+},
+{
+    "model": "survey.answer",
+    "pk": 3,
+    "fields": {
+        "poll": 5,
+        "created_at": "2022-02-05T12:32:16.533Z",
+        "choice": 10
+    }
+},
+{
+    "model": "survey.answer",
+    "pk": 4,
+    "fields": {
+        "poll": 6,
+        "created_at": "2022-02-05T12:36:54.564Z",
+        "choice": 12
+    }
+},
+{
+    "model": "survey.answer",
+    "pk": 5,
+    "fields": {
+        "poll": 4,
+        "created_at": "2022-02-05T12:39:47.817Z",
+        "choice": 9
     }
 },
 {
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$320000$niY85mtOm6EPDbm4louQlf$3rART4KQMkvIquFblggaVcHUUZ3VMTj1pXe9M9aS2Ts=",
-        "last_login": "2022-02-05T05:47:39.214Z",
+        "password": "pbkdf2_sha256$320000$VxAuwtijkiQntuCLg3womW$4y75f+IH9wka2FbYTeVNP2LkP6YFt5kha3+RwtY89G8=",
+        "last_login": "2022-02-05T10:11:26.041Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -60,7 +209,7 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2022-02-05T05:47:12.576Z",
+        "date_joined": "2022-02-05T10:09:45.778Z",
         "groups": [],
         "user_permissions": []
     }

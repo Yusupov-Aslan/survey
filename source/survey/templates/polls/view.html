@@ -16,6 +16,8 @@
             <h5 class="card-title">Опрос: {{ poll.question }}</h5>
             <a href="{% url "detail_view" poll.pk %}" class="btn btn" style="float: right">
                 Детальный просмотр...</a>
+              <a href="{% url "poll_answer_view" poll.pk %}" class="btn btn" style="float: right">
+                Ответить...</a>
           </div>
         </div>
     {% endfor %}

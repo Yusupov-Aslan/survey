@@ -7,8 +7,7 @@ from django.utils.deconstruct import deconstructible
 
 
 class Poll(models.Model):
-    question = models.TextField(max_length=2000, null=True, blank=True,
-                                verbose_name="Опрос")
+    question = models.TextField(max_length=2000, verbose_name="Опрос")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
 
     def __str__(self):
@@ -32,3 +31,11 @@ class Choice(models.Model):
         db_table = 'choices'
         verbose_name = 'Вариант'
         verbose_name_plural = 'Варианты'
+
+
+class Answer(models.Model):
+    poll = models.ForeignKey('survey.Poll', on_delete=models.CASCADE, null=True, related_name='answers',
+                             verbose_name='Опрос')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
+    choice = models.ForeignKey('survey.Choice', on_delete=models.CASCADE, null=True, related_name='answers',
+                               verbose_name='Вариант')
