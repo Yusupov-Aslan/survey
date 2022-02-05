@@ -2,24 +2,43 @@
 {% block title %}{{ poll.pk }}{% endblock %}
 {% block nav %}
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{% url 'add_poll_view' %}">Новая опрос</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'add_poll_view' %}">Новый опрос</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{% url 'update_poll_view' poll.pk%}">Редактировать</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'update_poll_view' poll.pk %}">Редактировать</a>
     </li>
     <li class="nav-item">
-       <a class="nav-link active" aria-current="page" href="{% url 'delete_poll_view' poll.pk%}">Удалить</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'delete_poll_view' poll.pk %}">Удалить</a>
     </li>
 {% endblock %}
 {% block content %}
-        <br>
+    <br>
     <div class="card border-info mb-3" style="max-width: 25rem;">
         <div class="card-body ">
             <h5 class="card-title">Опрос: {{ poll.question }}</h5>
             <p class="card-text">Время создания: {{ poll.created_at }}</p>
         </div>
-      <div class="card-footer bg-transparent border-info">
-          <a href="{% url "polls_view" %}" class="btn btn" style="float: right">Назад</a></div>
+        <div class="card-footer bg-transparent border-info">
+            <a href="{% url "polls_view" %}" class="btn btn" style="float: right">Назад</a></div>
     </div>
+    <br>
+    <h1>Создание варианта!</h1>
+    <form action="{% url "create_choice_view" poll.pk %}" method="post">
+        {% include 'partial/form.html' with button_text="Создать" %}
+    </form>
+    <br>
+    <h1>Список вариантов!</h1>
+    {% for choice in choices.all %}
+        <br>
+        <div class="card" style="max-width: 400px;">
+            <div class="card-body">
+                <h5 class="card-title">Вариант: {{ choice.option_text }}</h5>
+                <a href="{% url "delete_choice_view" choice.pk %}" class="btn btn" style="float: right">
+                                        Удалить...</a>
+                <a href="{% url "update_choice_view" choice.pk %}" class="btn btn" style="float: right">
+                                        Редактировать...</a>
 
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

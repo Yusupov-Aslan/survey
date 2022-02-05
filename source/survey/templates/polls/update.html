@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% block title %}Редактирование вопроса{% endblock %}
+{% block title %}Редактирование опроса{% endblock %}
 {% block nav %}
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{% url "detail_view" poll.pk %}">Вернуться к вопросу</a>
+      <a class="nav-link active" aria-current="page" href="{% url "detail_view" poll.pk %}">Вернуться к опросу</a>
     </li>
 {% endblock %}
 {% block content %}
-    <h1>Редактирование вопроса</h1>
+    <h1>Редактирование опроса</h1>
 
     <form action="{% url "update_poll_view" poll.pk %}" method="post">
        {% include 'partial/form.html' with button_text="Редактировать" %}

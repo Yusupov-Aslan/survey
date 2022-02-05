@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Редактирование варианта{% endblock %}
+{% block nav %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url "detail_view" choice.poll.pk %}">Вернуться к опросу</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <h1>Редактирование варианта</h1>
+
+    <form action="{% url "update_choice_view" choice.pk %}" method="post">
+       {% include 'partial/form.html' with button_text="Редактировать" %}
+    </form>
+
+{% endblock %}

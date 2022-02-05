@@ -1,7 +1,9 @@
+from django.core.validators import BaseValidator
 from django.db import models
 
 
 # Create your models here.
+from django.utils.deconstruct import deconstructible
 
 
 class Poll(models.Model):
@@ -19,7 +21,7 @@ class Poll(models.Model):
 
 
 class Choice(models.Model):
-    option_text = models.TextField(max_length=2000, null=True, blank=True, verbose_name="Текст варианта")
+    option_text = models.TextField(max_length=2000, verbose_name="Текст варианта")
     poll = models.ForeignKey('survey.Poll', on_delete=models.CASCADE, null=True, related_name='choices',
                              verbose_name='Опросы')
 
